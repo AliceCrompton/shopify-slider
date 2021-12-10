@@ -1,0 +1,64 @@
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+/>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">{{ section.settings.text-box }}</div>
+    <div class="swiper-slide">{{ section.settings.text-box }}</div>
+    <div class="swiper-slide">{{ section.settings.text-box }}</div>
+    ...
+  </div>
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Slider",
+  "settings": [
+    {
+      "id": "text-box",
+      "type": "text",
+      "label": "Heading",
+      "default": "Title"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "Link URL"
+    },
+    {
+      "id": "linktext",
+      "type": "text",
+      "label": "Link text",
+      "default": "Click here"
+    }
+  ]
+  ,
+  "presets": [
+    {
+      "name": "Product Slider",
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+  const swiper = new Swiper(".swiper", {
+    direction: "vertical",
+    loop: true,
+    
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+{% endjavascript %}
