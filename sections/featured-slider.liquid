@@ -25,12 +25,12 @@
     <div class="swiper-wrapper">
       <!-- Slides -->
       {%- for product in section.settings.collection.products -%}
-      <div class="swiper-slide"><p>{{product.title}}</p><div>
-      {%- endfor -%}
-      <div class="swiper-slide">title</div>
-      <div class="swiper-slide">title</div>
-      <div class="swiper-slide">title</div>
-      <div class="swiper-slide">title</div>
+        {{ forloop.index }}
+      	<div class="swiper-slide"><p>{{product.title}}</p></div>
+      {% else %}
+        // no products in your frontpage collection
+      {% endfor %}
+    
       <div class="swiper-slide">title</div>
     </div>
     <!-- If we need navigation buttons -->
