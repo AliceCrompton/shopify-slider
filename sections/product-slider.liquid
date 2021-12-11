@@ -1,12 +1,11 @@
-{{ 'slider.css' | asset_url | stylesheet_tag }}
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script src="{{ 'slider.js' | asset_url }}" defer="defer"></script>
 
 <!-- Slider main container -->
 <div class="swiper">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
+    <div class="swiper-slide">{{ section.settings.text-box | truncate: 1 }}</div>
+    <div class="swiper-slide">{{ section.settings.text-box }}</div>
     <div class="swiper-slide">{{ section.settings.text-box }}</div>
     <div class="swiper-slide">{{ section.settings.text-box }}</div>
     <div class="swiper-slide">{{ section.settings.text-box }}</div>
@@ -52,10 +51,25 @@
 
 {% javascript %}
   const swiper = new Swiper(".swiper", {
-    slidesPerView: 4,
-    spaceBetween: 15,
+    loop: true,
+    loopFillGroupWithBlank: true,
     freeMode: true,
 
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      544: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 15
+      }
+    },
+        
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
