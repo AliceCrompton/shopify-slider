@@ -24,6 +24,9 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
+      {%- for product in section.settings.collection.products -%}
+      <div class="swiper-slide"><p>{{product.title}}</p><div>
+      {%- endfor -%}
       <div class="swiper-slide">title</div>
       <div class="swiper-slide">title</div>
       <div class="swiper-slide">title</div>
