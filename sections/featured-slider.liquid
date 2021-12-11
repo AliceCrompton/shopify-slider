@@ -174,3 +174,31 @@
   ]
 }
 {% endschema %}
+
+{% javascript %}
+  const swiper = new Swiper(".swiper", {
+    loop: true,
+    loopFillGroupWithBlank: true,
+    freeMode: true,
+
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      544: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 15
+      }
+    },
+        
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+{% endjavascript %}
