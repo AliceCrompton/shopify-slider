@@ -32,7 +32,7 @@
       <!-- Slides -->
       {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
         <div class="swiper-slide">
-          <h1>{{ product.title | escape }}</h1>
+          <h1>{{ product.title }}</h1>
         <div>
       {%- endfor -%}
     </div>
