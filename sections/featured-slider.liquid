@@ -30,7 +30,7 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+      {%- for product in section.settings.collection.products -%}
         <div class="swiper-slide">
           <div>{{ product.title }}</div>
         <div>
