@@ -47,6 +47,22 @@
         "linktext": "Click here"
       }
     },
+    "16392302519cab8d4c": {
+      "type": "featured-slider",
+      "settings": {
+        "title": "Featured collection",
+        "collection": "",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -198,6 +214,7 @@
   "order": [
     "image_banner",
     "1639174187fc85652d",
+    "16392302519cab8d4c",
     "rich_text",
     "featured_products",
     "collage",
