@@ -27,7 +27,12 @@
           </a>
           <div class="product-card__body">
             <p{{ product.description | truncate: 220 }}</p>
-            <p class="product-card__price">{{ product.price | money }} <span>{{ product.compare_at_price | money }}</span></p>
+            <p class="product-card__price">
+              {{ product.price | money }} 
+              {% if product.compare_at_price %}
+                <span>{{ product.compare_at_price | money }}</span>
+              {% endif %}
+            </p>
           </div>
           <div class="product-card__btnWrapper">
             <button type="submit" name="add" class="product-card__btn product-form__submit">Add to bag</button>
