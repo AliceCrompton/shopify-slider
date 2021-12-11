@@ -1,55 +1,49 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
-{{ 'slider.scss' | asset_url | stylesheet_tag }}
+{{ 'slider.css' | asset_url | stylesheet_tag }}
 
-<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
-
-<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'template-collection.css' | asset_url | stylesheet_tag }}</noscript>
-
-{%- liquid
-  assign products_to_display = section.settings.collection.all_products_count
-
-  if section.settings.collection.all_products_count > section.settings.products_to_show
-    assign products_to_display = section.settings.products_to_show
-    assign more_in_collection = true
-  endif
--%}
-
+<div class="swiper-container">
   
-  
-  <!-- Slider main container -->
   <div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      {%- for product in section.settings.collection.products -%}
-      	<div class="swiper-slide">
-          <div class="card-wrapper">
+    <h2 class="swiper-title">Product Carousel</h2>
+
+    <div class="swiper-wrapper">      
+    {%- for product in section.settings.collection.products -%}
+      <div class="swiper-slide">
+        <div class="product-card">
+          <a href="{{ product.url }}" class="product-card__header">
             <div class="product-card__image">
+              {% if product.tags %}
+                <div class="product-card__tag">{{ product.tags}}</div>
+              {% endif %}
               <img
-                  src="{{ product.featured_image | img_url: '600x600' }}"
+                  src="{{ product.featured_image | img_url: '800x800' }}"
                   alt="{{ product.featured_media.alt | escape }}"
                   loading="lazy"
                   class="motion-reduce"
                   width="{{ product.featured_media.width }}"
                   height="{{ product.featured_media.height }}"
                 />
-              </div>
-              <p>{{ product.title }}</p>
-              <div>{{ product.description }}</div>
-              <p>{{ product.price | money }} GBP</p>
+            </div>
+            <h2>{{ product.title }}</h2>
+          </a>
+          <div class="product-card__body">
+            <p{{ product.description | truncate: 220 }}</p>
+            <p class="product-card__price">{{ product.price | money }} <span>{{ product.compare_at_price | money }}</span></p>
+          </div>
+          <div class="product-card__btnWrapper">
+            <button type="submit" name="add" class="product-card__btn product-form__submit">Add to bag</button>
           </div>
         </div>
-      {% endfor %}
-    
+      </div>
+    {% endfor %}
     </div>
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev">prev</div>
-    <div class="swiper-button-next">next</div>
+
+    <div class="swiper-navigation">
+      <div class="swiper-prev"><div class="swiper-arrow left"></div></div>
+      <div class="swiper-next"><div class="swiper-arrow right"></div></div>
+    </div>
   </div>
+
+</div>
  
 
 
@@ -157,28 +151,26 @@
 
 {% javascript %}
   const swiper = new Swiper(".swiper", {
+
+    slidesPerView: 'auto',
     loop: true,
     loopFillGroupWithBlank: true,
     freeMode: true,
+    spaceBetween: 12,
 
     breakpoints: {
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 20
-      },
       544: {
-        slidesPerView: 3,
-        spaceBetween: 30
+        slidesPerView: 2,
       },
       991: {
         slidesPerView: 4,
-        spaceBetween: 15
+        spaceBetween: 24
       }
     },
         
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-next",
+      prevEl: ".swiper-prev",
     },
   });
 {% endjavascript %}
