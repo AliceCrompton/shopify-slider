@@ -39,6 +39,14 @@
         "show_text_below": true
       }
     },
+    "1639174187fc85652d": {
+      "type": "product-slider",
+      "settings": {
+        "text-box": "Title",
+        "link": "",
+        "linktext": "Click here"
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -185,23 +193,15 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
-    },
-    "1639174187fc85652d": {
-      "type": "product-slider",
-      "settings": {
-        "text-box": "Title",
-        "link": "",
-        "linktext": "Click here"
-      }
     }
   },
   "order": [
     "image_banner",
+    "1639174187fc85652d",
     "rich_text",
     "featured_products",
     "collage",
     "video",
-    "multi_column",
-    "1639174187fc85652d"
+    "multi_column"
   ]
 }
