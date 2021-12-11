@@ -4,6 +4,7 @@
   // import styles bundle
   import 'swiper/css/bundle';
 
+	console.log('i am being rendered?')
   // init Swiper:
   const swiper = new Swiper(".swiper", {
      // Optional parameters
