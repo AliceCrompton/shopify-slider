@@ -6,10 +6,11 @@
 
   // init Swiper:
   const swiper = new Swiper(".swiper", {
-    // Optional parameters
-    direction: "vertical",
-    loop: true,
-    
+     // Optional parameters
+    slidesPerView: 4,
+    spaceBetween: 15,
+    freeMode: true,
+
     // Navigation arrows
     navigation: {
       nextEl: ".swiper-button-next",
