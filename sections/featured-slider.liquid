@@ -25,21 +25,23 @@
     {%- endif -%}
   </div>
   
+  
   <!-- Slider main container -->
   <div class="swiper">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      {%- for product in section.settings.collection.products -%}
-        <div class="swiper-slide">
-          <div>title</div>
-        <div>
-      {%- endfor -%}
+      <div class="swiper-slide">{{ section.settings.text-box | truncate: 1 }}</div>
+      <div class="swiper-slide">{{ section.settings.text-box }}</div>
+      <div class="swiper-slide">{{ section.settings.text-box }}</div>
+      <div class="swiper-slide">{{ section.settings.text-box }}</div>
+      <div class="swiper-slide">{{ section.settings.text-box }}</div>
     </div>
     <!-- If we need navigation buttons -->
     <div class="swiper-button-prev">prev</div>
     <div class="swiper-button-next">next</div>
   </div>
+ 
 
 </div>
 
