@@ -39,14 +39,6 @@
         "show_text_below": true
       }
     },
-    "1639174187fc85652d": {
-      "type": "product-slider",
-      "settings": {
-        "text-box": "Title",
-        "link": "",
-        "linktext": "Click here"
-      }
-    },
     "16392302519cab8d4c": {
       "type": "featured-slider",
       "settings": {
@@ -213,7 +205,6 @@
   },
   "order": [
     "image_banner",
-    "1639174187fc85652d",
     "16392302519cab8d4c",
     "rich_text",
     "featured_products",
