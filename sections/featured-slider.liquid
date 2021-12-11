@@ -32,8 +32,7 @@
       <!-- Slides -->
       {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
         <div class="swiper-slide">
-          <h1>{{ product }}</h1>
-       
+          <h1>{{ product_card_product.title | escape }}</h1>
         <div>
       {%- endfor -%}
     </div>
